@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/restaurantsFragment">
 
+    <fragment
+        android:id="@+id/foodsFragment"
+        android:name="com.example.teambhomework3.fragments.FoodsFragment"
+        android:label="fragment_foods"
+        tools:layout="@layout/fragment_foods" />
+    <fragment
+        android:id="@+id/restaurantsFragment"
+        android:name="com.example.teambhomework3.fragments.RestaurantsFragment"
+        android:label="fragment_restaurants"
+        tools:layout="@layout/fragment_restaurants" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.teambhomework3.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.teambhomework3.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
