@@ -5,8 +5,11 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/restaurantsFragment">
 
+    <fragment
+        android:id="@+id/restaurantsFragment"
         android:name="com.example.teambhomework3.fragments.RestaurantsFragment"
         android:label="@string/restaurants"
+        tools:layout="@layout/fragment_restaurants"/>
     <fragment
         android:id="@+id/foodsFragment"
         android:name="com.example.teambhomework3.fragments.FoodsFragment"
