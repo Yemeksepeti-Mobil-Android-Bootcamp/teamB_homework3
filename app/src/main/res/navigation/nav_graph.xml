@@ -5,24 +5,20 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/restaurantsFragment">
 
+        android:name="com.example.teambhomework3.fragments.RestaurantsFragment"
+        android:label="@string/restaurants"
     <fragment
         android:id="@+id/foodsFragment"
         android:name="com.example.teambhomework3.fragments.FoodsFragment"
-        android:label="fragment_foods"
         tools:layout="@layout/fragment_foods" />
-    <fragment
-        android:id="@+id/restaurantsFragment"
-        android:name="com.example.teambhomework3.fragments.RestaurantsFragment"
-        android:label="fragment_restaurants"
-        tools:layout="@layout/fragment_restaurants" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.teambhomework3.fragments.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.teambhomework3.fragments.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.teambhomework3.fragments.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
