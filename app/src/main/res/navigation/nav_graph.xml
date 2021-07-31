@@ -9,11 +9,19 @@
         android:id="@+id/restaurantsFragment"
         android:name="com.example.teambhomework3.fragments.RestaurantsFragment"
         android:label="@string/restaurants"
-        tools:layout="@layout/fragment_restaurants"/>
+        tools:layout="@layout/fragment_restaurants">
+        <action
+            android:id="@+id/action_restaurantsFragment_to_addRestaurantFragment"
+            app:destination="@id/addRestaurantFragment" />
+    </fragment>
     <fragment
         android:id="@+id/foodsFragment"
         android:name="com.example.teambhomework3.fragments.FoodsFragment"
-        tools:layout="@layout/fragment_foods" />
+        tools:layout="@layout/fragment_foods" >
+        <action
+            android:id="@+id/action_foodsFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.teambhomework3.fragments.ProfileFragment"
@@ -24,4 +32,22 @@
         android:name="com.example.teambhomework3.fragments.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.teambhomework3.fragments.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+        <action
+            android:id="@+id/action_addFoodFragment_to_foodsFragment"
+            app:destination="@id/foodsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRestaurantFragment"
+        android:name="com.example.teambhomework3.fragments.AddRestaurantFragment"
+        android:label="fragment_add_restaurant"
+        tools:layout="@layout/fragment_add_restaurant" >
+        <action
+            android:id="@+id/action_addRestaurantFragment_to_restaurantsFragment"
+            app:destination="@id/restaurantsFragment" />
+    </fragment>
 </navigation>

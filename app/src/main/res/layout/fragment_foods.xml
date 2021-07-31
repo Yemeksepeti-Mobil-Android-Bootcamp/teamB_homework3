@@ -7,7 +7,7 @@
     tools:context=".fragments.FoodsFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/foodAdd_fab"
         android:src="@drawable/ic_add"
         android:clickable="true"
         android:layout_width="wrap_content"
