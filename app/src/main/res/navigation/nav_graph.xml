@@ -35,7 +35,7 @@
     <fragment
         android:id="@+id/addFoodFragment"
         android:name="com.example.teambhomework3.fragments.AddFoodFragment"
-        android:label="fragment_add_food"
+        android:label="Add a Food"
         tools:layout="@layout/fragment_add_food" >
         <action
             android:id="@+id/action_addFoodFragment_to_foodsFragment"
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/addRestaurantFragment"
         android:name="com.example.teambhomework3.fragments.AddRestaurantFragment"
-        android:label="fragment_add_restaurant"
+        android:label="Add a Restaurant"
         tools:layout="@layout/fragment_add_restaurant" >
         <action
             android:id="@+id/action_addRestaurantFragment_to_restaurantsFragment"
