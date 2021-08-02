@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="baslikYaziBoyut">36sp</dimen>
+    <dimen name="chipYaziBoyut">14sp</dimen>
+    <dimen name="genelYaziBoyut">22sp</dimen>
+    <dimen name="yaziGenislik">300dp</dimen>
+    <dimen name="butonYaziBoyut">18sp</dimen>
+    <dimen name="fiyatYaziBoyut">44sp</dimen>
+    <dimen name="araMesafe">16dp</dimen>
+    <dimen name="kenarMesafe">32dp</dimen>
+    <dimen name="genelTabletYazi">30sp</dimen>
+</resources>
