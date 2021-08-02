@@ -5,6 +5,10 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="testRunner" value="GRADLE" />
+<<<<<<< Updated upstream
+=======
+        <option name="disableWrapperSourceDistributionNotification" value="true" />
+>>>>>>> Stashed changes
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
