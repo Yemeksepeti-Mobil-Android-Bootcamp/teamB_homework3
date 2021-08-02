@@ -21,4 +21,10 @@
     <color name="red">#FF4646</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
+
+
+    <color name="anaRenk">#CB2020</color>
+    <color name="koyuAnaRenk">#BF2020</color>
+    <color name="yaziRenk1">#FFFFFF</color>
+    <color name="yaziRenk2">#BDBDBD</color>
 </resources>
