@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/FurkanTitiz/AndroidStudioProjects/teamB_homework3/app/src/main/res/layout/fragment_foods.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/FurkanTitiz/AndroidStudioProjects/teamB_homework3/app/src/main/res/layout/fragment_restaurants.xml" value="0.14947916666666666" />
+        <entry key="..\:/Users/FurkanTitiz/AndroidStudioProjects/teamB_homework3/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/titiz/Documents/GitHub/teamB_homework3/app/src/main/res/layout/fragment_food_detail.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/titiz/Documents/GitHub/teamB_homework3/app/src/main/res/layout/fragment_profile.xml" value="0.25025641025641027" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

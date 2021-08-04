@@ -27,7 +27,4 @@ class RestaurantsFragment : Fragment() {
         }
         return binding.root
     }
-
-
-
 }
