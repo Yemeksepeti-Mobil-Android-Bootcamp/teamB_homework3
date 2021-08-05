@@ -1,4 +1,4 @@
-package com.example.teambhomework3.fragments
+package com.example.teambhomework3.fragments.food
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentFoodsBinding
-import com.example.teambhomework3.databinding.FragmentRestaurantsBinding
 
 
 class FoodsFragment : Fragment() {
@@ -25,7 +24,11 @@ class FoodsFragment : Fragment() {
         binding.foodAddFab.setOnClickListener {
             findNavController().navigate(R.id.action_foodsFragment_to_addFoodFragment)
         }
+
         return binding.root
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 }

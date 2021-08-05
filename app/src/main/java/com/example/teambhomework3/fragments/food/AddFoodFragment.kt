@@ -1,4 +1,4 @@
-package com.example.teambhomework3.fragments
+package com.example.teambhomework3.fragments.food
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,29 +7,26 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.teambhomework3.MainActivity
 import com.example.teambhomework3.R
-import com.example.teambhomework3.databinding.FragmentAddRestaurantBinding
-import com.example.teambhomework3.databinding.FragmentRestaurantsBinding
+import com.example.teambhomework3.databinding.FragmentAddFoodBinding
 
+class AddFoodFragment : Fragment() {
 
-class AddRestaurantFragment : Fragment() {
-
-    private var _binding: FragmentAddRestaurantBinding? = null
+    private var _binding: FragmentAddFoodBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddRestaurantBinding.inflate(inflater, container, false)
+        _binding = FragmentAddFoodBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            findNavController().navigate(R.id.action_addRestaurantFragment_to_restaurantsFragment)
+            findNavController().navigate(R.id.action_addFoodFragment_to_foodsFragment)
         }
         return super.onOptionsItemSelected(item)
     }

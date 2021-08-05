@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661594571026",
+    "project_id": "teambhomework3",
+    "storage_bucket": "teambhomework3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661594571026:android:42a2b49f53e4990cc233cb",
+        "android_client_info": {
+          "package_name": "com.example.teambhomework3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661594571026-ic8s7cdl1b1ikal8i5gnp56rtf65smk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEvb-BLCUk8SmhIvET81fwNa3sl5uedPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661594571026-ic8s7cdl1b1ikal8i5gnp56rtf65smk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

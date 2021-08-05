@@ -1,4 +1,4 @@
-package com.example.teambhomework3.fragments
+package com.example.teambhomework3.fragments.restaurant
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

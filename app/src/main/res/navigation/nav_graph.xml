@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/restaurantsFragment"
-        android:name="com.example.teambhomework3.fragments.RestaurantsFragment"
+        android:name="com.example.teambhomework3.fragments.restaurant.RestaurantsFragment"
         android:label="@string/restaurants"
         tools:layout="@layout/fragment_restaurants">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/foodsFragment"
-        android:name="com.example.teambhomework3.fragments.FoodsFragment"
+        android:name="com.example.teambhomework3.fragments.food.FoodsFragment"
         tools:layout="@layout/fragment_foods" >
         <action
             android:id="@+id/action_foodsFragment_to_addFoodFragment"
@@ -34,7 +34,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/addFoodFragment"
-        android:name="com.example.teambhomework3.fragments.AddFoodFragment"
+        android:name="com.example.teambhomework3.fragments.food.AddFoodFragment"
         android:label="Add a Food"
         tools:layout="@layout/fragment_add_food" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/addRestaurantFragment"
-        android:name="com.example.teambhomework3.fragments.AddRestaurantFragment"
+        android:name="com.example.teambhomework3.fragments.restaurant.AddRestaurantFragment"
         android:label="Add a Restaurant"
         tools:layout="@layout/fragment_add_restaurant" >
         <action

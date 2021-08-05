@@ -17,20 +17,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        val apiService = getApiService()
-//
-//        listFoods(5, object: RetrofitResponseHandler<Food> {
-//            override fun onError() {
-//                Log.v("MainActivity", "Error :(")
-//
-//            }
-//            override fun onResponse(response: YemeksepetiHW3BaseListingResponse<Food>) {
-//                response.data.forEach { food ->
-//                    Log.v("MainActivity", "Food: ${food.name}")
-//                }
-//            }
-//        })
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -45,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController,appBarConfiguration)
-
 
     }
     override fun onSupportNavigateUp(): Boolean {
