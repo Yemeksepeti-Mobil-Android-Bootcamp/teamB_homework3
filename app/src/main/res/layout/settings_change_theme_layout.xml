@@ -5,24 +5,25 @@
     android:id="@+id/settingsChangeThemeView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="?attr/minTouchTargetSize"
-    app:cardCornerRadius="0dp"
-    >
+    android:clickable="false"
+    android:focusable="false"
+    android:theme="@style/Widget.AppCompat.Button.Borderless"
+    app:cardCornerRadius="@dimen/_20sdp"
+    app:cardElevation="@dimen/_3sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        >
+        android:orientation="horizontal"
+        android:padding="@dimen/_7sdp">
+
         <ImageView
             android:id="@+id/eyeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-            app:tint="@color/list_item_tint"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:src="@drawable/ic_eye_for_light"
+            app:tint="@color/list_item_tint"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,12 +32,11 @@
             android:id="@+id/themeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_16sdp"
-            android:maxLines="1"
             android:text="@string/change_theme"
-            android:textColor="@color/list_item_tint"
-            android:textSize="@dimen/_16ssp"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/_15sdp"
             app:layout_constraintBottom_toBottomOf="@+id/eyeIcon"
             app:layout_constraintEnd_toStartOf="@+id/switchTheme"
             app:layout_constraintStart_toEndOf="@+id/eyeIcon"
@@ -47,21 +47,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/light"
+            android:textAllCaps="false"
             app:useMaterialThemeColors="false"
             app:layout_constraintBottom_toBottomOf="@+id/themeText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/themeText" />
+            app:layout_constraintTop_toTopOf="@+id/themeText"  />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/arrowIcon"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginEnd="@dimen/_16sdp"-->
-<!--            android:src="@drawable/ic_right_arrow"-->
-<!--            app:tint="#DD858484"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/listItemText" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -8,6 +8,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.teambhomework3.databinding.ActivityMainBinding
+import com.example.teambhomework3.utils.SharedPreferencesModule
+import com.example.teambhomework3.utils.ThemeUtils
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +18,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        SharedPreferencesModule.initSharedPreferences(baseContext)
+
+        ThemeUtils.onActivityCreateSetTheme(this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root

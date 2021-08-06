@@ -4,72 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SettingsFragment"
-    android:orientation="vertical"
-    >
+    tools:context=".fragments.SettingsFragment">
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/settingsRecyclerView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:clipToPadding="false"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        tools:itemCount="5" />-->
-
-    <include
-        android:id="@+id/myProfile"
-        layout="@layout/settings_my_profile_item"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <include
-        android:id="@+id/myInfo"
-        layout="@layout/settings_my_info_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myProfile"/>
+        <!-- android:backgroundTint="?attr/appCompatBackground" -->
 
-    <include
-        android:id="@+id/myPreviousOrders"
-        layout="@layout/settings_my_previous_orders_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myInfo"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/myProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/settings_button"
+            android:backgroundTint="?attr/appCompatBackground"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:minHeight="?attr/minTouchTargetSize"
+            android:padding="@dimen/_15sdp"
+            android:text="@string/my_profile"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        android:id="@+id/myAddresses"
-        layout="@layout/settings_my_addresses_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myPreviousOrders"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/myInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/settings_button"
+            android:backgroundTint="?attr/appCompatBackground"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:minHeight="?attr/minTouchTargetSize"
+            android:padding="@dimen/_15sdp"
+            android:text="@string/my_info"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myProfile" />
 
-    <include
-        android:id="@+id/aboutApplication"
-        layout="@layout/settings_about_application_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myAddresses"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/myPreviousOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/settings_button"
+            android:backgroundTint="?attr/appCompatBackground"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:minHeight="?attr/minTouchTargetSize"
+            android:padding="@dimen/_15sdp"
+            android:text="@string/my_previous_orders"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myInfo" />
 
-    <include
-        android:id="@+id/changeTheme"
-        layout="@layout/settings_change_theme_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutApplication" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/myAddresses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/settings_button"
+            android:backgroundTint="?attr/appCompatBackground"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:minHeight="?attr/minTouchTargetSize"
+            android:padding="@dimen/_15sdp"
+            android:text="@string/my_addresses"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myPreviousOrders" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/aboutApplication"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:background="@drawable/settings_button"
+            android:backgroundTint="?attr/appCompatBackground"
+            android:drawableEnd="@drawable/ic_right_arrow"
+            android:minHeight="?attr/minTouchTargetSize"
+            android:padding="@dimen/_15sdp"
+            android:text="@string/about_application"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myAddresses" />
+
+        <include
+            android:id="@+id/changeTheme"
+            layout="@layout/settings_change_theme_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutApplication" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
