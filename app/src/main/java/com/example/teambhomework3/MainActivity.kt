@@ -27,19 +27,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         val navController=findNavController(R.id.navHostFragment)
-        val appBarConfiguration= AppBarConfiguration(setOf(
+       /* val appBarConfiguration= AppBarConfiguration(setOf(
             R.id.restaurantsFragment,
             R.id.foodsFragment,
             R.id.profileFragment,
             R.id.settingsFragment
-        ))
+        ))*/
 
         binding.bottomNavigationView.setupWithNavController(navController)
-        setupActionBarWithNavController(navController,appBarConfiguration)
+        //setupActionBarWithNavController(navController,appBarConfiguration)
 
     }
-    override fun onSupportNavigateUp(): Boolean {
+    /*override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()|| super.onSupportNavigateUp()
-    }
+    }*/
 
 }
