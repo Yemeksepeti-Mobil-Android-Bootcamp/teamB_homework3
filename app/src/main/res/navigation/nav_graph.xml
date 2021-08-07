@@ -29,7 +29,11 @@
         android:id="@+id/profileFragment"
         android:name="com.example.teambhomework3.fragments.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_self"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.teambhomework3.fragments.SettingsFragment"

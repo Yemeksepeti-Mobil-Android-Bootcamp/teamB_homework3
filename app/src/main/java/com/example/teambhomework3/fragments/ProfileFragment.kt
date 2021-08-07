@@ -24,6 +24,7 @@ class ProfileFragment : Fragment() {
     private lateinit var myAdapter: ProfileAdapter
     private lateinit var adressArrayList: ArrayList<Adress>
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -34,6 +35,7 @@ class ProfileFragment : Fragment() {
 
         db = Firebase.firestore
         initViews(db)
+        onClickListener()
 
         return view
     }
@@ -50,6 +52,14 @@ class ProfileFragment : Fragment() {
         getUser(db)
         getAdress(db)
     }
+
+    private fun onClickListener() {
+        val bottomSheetFragment = BottomSheetFragment()
+        binding.profileAddAdress.setOnClickListener {
+            bottomSheetFragment.show(requireActivity().supportFragmentManager, "BottomSheetDialog")
+        }
+    }
+
     private fun getUser(db: FirebaseFirestore){
         db.collection("users")
             .get()
