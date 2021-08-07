@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantNumber_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -39,6 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/restaurantNumber_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantName_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -57,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/restaurantName_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantType_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -75,6 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/restaurantType_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantAdress_textInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -93,6 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/restaurantAdress_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantLogoUrl_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>

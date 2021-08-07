@@ -47,30 +47,30 @@ class AddRestaurantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.saveButton.setOnClickListener {
-            val restaurantNumber=binding.restaurantNumberTextView.editText.toString().trim()
-            val restaurantName=binding.restaurantNameTextView.editText.toString().trim()
-            val restaurantType=binding.restaurantTypeTextView.editText.toString().trim()
-            val restaurantAddress=binding.restaurantAdressTextView.editText.toString().trim()
-            val restaurantLogoUrl=binding.restaurantLogoUrlTextView.editText.toString().trim()
+            val restaurantNumber=binding.restaurantNumberTextInputEditText.editableText.toString().trim()
+            val restaurantName=binding.restaurantNameTextInputEditText.editableText.toString().trim()
+            val restaurantType=binding.restaurantTypeTextInputEditText.editableText.toString().trim()
+            val restaurantAddress=binding.restaurantAdressTextInputLayout.editableText.toString().trim()
+            val restaurantLogoUrl=binding.restaurantLogoUrlTextInputEditText.editableText.toString().trim()
 
             if(restaurantNumber.isNullOrEmpty()){
-                binding.restaurantNumberTextView.error="This field is required"
+                binding.restaurantNumberTextInputEditText.error="This field is required"
                 return@setOnClickListener
             }
             if(restaurantName.isNullOrEmpty()){
-                binding.restaurantNameTextView.error="This field is required"
+                binding.restaurantNameTextInputEditText.error="This field is required"
                 return@setOnClickListener
             }
             if(restaurantType.isNullOrEmpty()){
-                binding.restaurantTypeTextView.error="This field is required"
+                binding.restaurantTypeTextInputEditText.error="This field is required"
                 return@setOnClickListener
             }
             if(restaurantAddress.isNullOrEmpty()){
-                binding.restaurantAdressTextView.error="This field is required"
+                binding.restaurantAdressTextInputLayout.error="This field is required"
                 return@setOnClickListener
             }
             if(restaurantLogoUrl.isNullOrEmpty()){
-                binding.restaurantLogoUrlTextView.error="This field is required"
+                binding.restaurantLogoUrlTextInputEditText.error="This field is required"
                 return@setOnClickListener
             }
 
@@ -79,11 +79,11 @@ class AddRestaurantFragment : Fragment() {
             restaurantMap["restaurantAdress"] = restaurantAddress
             restaurantMap["restaurantImage"] = restaurantLogoUrl
             restaurantMap["restaurantName"] = restaurantName
-            restaurantMap["restarauntType"] = restaurantType
+            restaurantMap["restaurantType"] = restaurantType
 
             db.collection("restaurants").document(restaurantName).set(restaurantMap)
 
-            Toast.makeText(context,"Added Restaurant to Firestore",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context,"Added Restaurant to Firestore",Toast.LENGTH_LONG).show()
 
             findNavController().navigate(R.id.action_addRestaurantFragment_to_restaurantsFragment)
         }
