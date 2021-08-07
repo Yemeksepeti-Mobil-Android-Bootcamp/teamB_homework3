@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -34,7 +33,7 @@
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/profile_picture" />
+                tools:srcCompat="@drawable/profile_picture" />
 
             <View
                 android:id="@+id/profileVerticalLine"
@@ -46,6 +45,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/profileImageView"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <LinearLayout
                 android:id="@+id/profileJoinedLayout"
                 android:layout_width="wrap_content"
@@ -65,33 +65,20 @@
                     android:id="@+id/profileDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="6 mon ago"
+                    tools:text="24.04.2018"
                     android:textColor="@color/black"
                     android:textSize="22sp" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/profileName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="David"
-                android:textSize="36sp"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/profileLastName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Clerisseau"
-                android:textSize="36sp"/>
-        </LinearLayout>
-
+            tools:text="David Clerisseau"
+            android:textSize="36sp"
+            android:textColor="@color/black" />
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -109,39 +96,12 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profilePreviousOrders"
-            android:layout_width="200dp"
-            android:layout_height="125dp"
-            android:layout_margin="2dp"
-            app:cardCornerRadius="16dp"
-            android:layout_marginStart="2dp"
-            app:cardElevation="4dp"
-            app:contentPadding="16dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/profilePreviousOrderRestaurantName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Burger King"
-                    android:textSize="16sp"
-                    android:textColor="#550009"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/profilePreviousOrderName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="1 Wooper"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profileOrderRecyclerView"
+            tools:listitem="@layout/item_order"
+            tools:itemCount="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <View
             android:layout_width="match_parent"
@@ -160,61 +120,13 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profileAdressContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="2dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:contentPadding="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/profileAdressName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Adres Adı"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/profileCity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="İl/İlçe"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/profileNameAdress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="İsim Soyisim"
-                    android:textSize="16sp"
-                    android:textColor="#808080" />
-                <TextView
-                    android:id="@+id/profileAdress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Adres Adres Adres Adres Adres Adres Adres Adres"
-                    android:textSize="16sp"
-                    android:textColor="#808080" />
-                <TextView
-                    android:id="@+id/profileNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="(123) 4567890"
-                    android:textSize="16sp"
-                    android:textColor="#808080" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        <!--recycler view adres-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profileAdressRecyclerView"
+            tools:listitem="@layout/item_adress"
+            tools:itemCount="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
 
