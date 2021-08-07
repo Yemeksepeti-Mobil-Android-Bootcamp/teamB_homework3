@@ -16,7 +16,7 @@
         <item name="android:textColor" tools:targetApi="l">@color/black</item>
         <!-- AppCompatButton Background color -->
         <item name="appCompatBackground" tools:targetApi="l">@color/white</item>
-        <item name="windowActionBar">false</item>
+        <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
     </style>
 </resources>

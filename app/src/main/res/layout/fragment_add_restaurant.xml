@@ -6,24 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".fragments.restaurant.AddRestaurantFragment">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/restaurantImage_ImageView"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/restaurantNumber_textView"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:background="@drawable/placeholder_image"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:scaleType="centerCrop"
+        android:hint="Restaurant Number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/labelres_textView" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantNumber_textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/foodName_textView"
+        android:id="@+id/restaurantName_textView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,15 +37,16 @@
         android:hint="Restaurant Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/restaurantNumber_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantName_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/foodPrice_textView"
+        android:id="@+id/restaurantType_textView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,9 +56,10 @@
         android:hint="Restaurant Type"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodName_textView">
+        app:layout_constraintTop_toBottomOf="@+id/restaurantName_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantType_textInputEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -69,24 +75,33 @@
         android:hint="Restaurant Address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodPrice_textView">
+        app:layout_constraintTop_toBottomOf="@+id/restaurantType_textView">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantAdress_textInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/labelres_textView"
-        android:textSize="15sp"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/restaurantLogoUrl_textView"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Select an Restaurant Logo"
-        android:textStyle="bold"
+        android:layout_marginEnd="16dp"
+        android:hint="Restaurant Logo Url"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurantAdress_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/restaurantAdress_textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/restaurantLogoUrl_textInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/save_button"
@@ -97,9 +112,10 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/purple_500"
         android:text="Save"
+        android:background="@color/dark"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/restaurantImage_ImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/restaurantLogoUrl_textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
