@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
+import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentProfileBinding
 import com.example.teambhomework3.entity.Adress
-import com.example.teambhomework3.utils.adapters.ProfileAdapter
+import com.example.teambhomework3.utils.adapters.AddressAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -21,7 +23,7 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var db: FirebaseFirestore
-    private lateinit var myAdapter: ProfileAdapter
+    private lateinit var myAdapter: AddressAdapter
     private lateinit var adressArrayList: ArrayList<Adress>
 
 
@@ -46,7 +48,7 @@ class ProfileFragment : Fragment() {
         binding.profileAdressRecyclerView.setHasFixedSize(true)
 
         adressArrayList = arrayListOf()
-        myAdapter = ProfileAdapter(adressArrayList, requireContext())
+        myAdapter = AddressAdapter(adressArrayList, requireContext())
         binding.profileAdressRecyclerView.adapter = myAdapter
 
         getUser(db)
@@ -56,6 +58,7 @@ class ProfileFragment : Fragment() {
     private fun onClickListener() {
         val bottomSheetFragment = BottomSheetFragment()
         binding.profileAddAdress.setOnClickListener {
+            bottomSheetFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.ThemeOverlay_Demo_BottomSheetDialog)
             bottomSheetFragment.show(requireActivity().supportFragmentManager, "BottomSheetDialog")
         }
     }
@@ -86,9 +89,10 @@ class ProfileFragment : Fragment() {
                     adressArrayList.add(
                         Adress(
                             "${doc.data["adressName"]}",
-                            "${doc.data["adressCity"]}",
-                            "${doc.data["adress"]}",
+                            "${doc.data["addressCity"]}",
+                            "${doc.data["address"]}",
                             "${doc.data["adressNumber"]}",
+                            "${doc.id}"
                         )
                     )
                 }
