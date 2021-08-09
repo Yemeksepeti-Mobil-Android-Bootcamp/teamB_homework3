@@ -2,17 +2,19 @@ package com.example.teambhomework3.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentProfileBinding
 import com.example.teambhomework3.entity.Adress
+import com.example.teambhomework3.entity.Order
 import com.example.teambhomework3.utils.adapters.AddressAdapter
+import com.example.teambhomework3.utils.adapters.OrderAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -24,7 +26,9 @@ class ProfileFragment : Fragment() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var myAdapter: AddressAdapter
+    private lateinit var orderAdapter: OrderAdapter
     private lateinit var adressArrayList: ArrayList<Adress>
+    private lateinit var orderArrayList: ArrayList<Order>
 
 
     override fun onCreateView(
@@ -47,27 +51,40 @@ class ProfileFragment : Fragment() {
         binding.profileAdressRecyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
         binding.profileAdressRecyclerView.setHasFixedSize(true)
 
+        binding.profileOrderRecyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
+        binding.profileOrderRecyclerView.setHasFixedSize(true)
+
         adressArrayList = arrayListOf()
+        orderArrayList = arrayListOf()
+
         myAdapter = AddressAdapter(adressArrayList, requireContext())
+        orderAdapter = OrderAdapter(orderArrayList)
+
         binding.profileAdressRecyclerView.adapter = myAdapter
+
+        binding.profileOrderRecyclerView.adapter = orderAdapter
 
         getUser(db)
         getAdress(db)
+        getOrders(db)
     }
 
     private fun onClickListener() {
         val bottomSheetFragment = BottomSheetFragment()
         binding.profileAddAdress.setOnClickListener {
-            bottomSheetFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.ThemeOverlay_Demo_BottomSheetDialog)
+            bottomSheetFragment.setStyle(
+                DialogFragment.STYLE_NORMAL,
+                R.style.ThemeOverlay_Demo_BottomSheetDialog
+            )
             bottomSheetFragment.show(requireActivity().supportFragmentManager, "BottomSheetDialog")
         }
     }
 
-    private fun getUser(db: FirebaseFirestore){
+    private fun getUser(db: FirebaseFirestore) {
         db.collection("users")
             .get()
-            .addOnSuccessListener { profile->
-                for (doc in profile){
+            .addOnSuccessListener { profile ->
+                for (doc in profile) {
                     binding.profileName.text = doc.data["name"].toString()
                     binding.profileDate.text = doc.data["joinedDate"].toString()
 
@@ -80,12 +97,12 @@ class ProfileFragment : Fragment() {
             }
     }
 
-    private fun getAdress(db: FirebaseFirestore){
+    private fun getAdress(db: FirebaseFirestore) {
         db.collection("users").document("7TqNLIAQzjJVWLRAsAmC")
             .collection("adress")
             .get()
             .addOnSuccessListener {
-                for (doc in it){
+                for (doc in it) {
                     adressArrayList.add(
                         Adress(
                             "${doc.data["adressName"]}",
@@ -97,6 +114,26 @@ class ProfileFragment : Fragment() {
                     )
                 }
                 myAdapter.notifyDataSetChanged()
+            }
+            .addOnFailureListener { exception ->
+                Log.w("errorDocuments", "Error getting documents.", exception)
+            }
+    }
+
+    private fun getOrders(db: FirebaseFirestore) {
+        db.collection("users").document("7TqNLIAQzjJVWLRAsAmC")
+            .collection("orders")
+            .get()
+            .addOnSuccessListener {
+                for (doc in it) {
+                    orderArrayList.add(
+                        Order(
+                            "${doc.data["restaurantName"]}",
+                            "${doc.data["orderFoodName"]}",
+                        )
+                    )
+                }
+                orderAdapter.notifyDataSetChanged()
             }
             .addOnFailureListener { exception ->
                 Log.w("errorDocuments", "Error getting documents.", exception)
