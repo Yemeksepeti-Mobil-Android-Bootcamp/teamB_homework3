@@ -1,5 +1,6 @@
 package com.example.teambhomework3
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.teambhomework3.databinding.ActivityMainBinding
 import com.example.teambhomework3.fragments.BottomSheetFragment
+import com.example.teambhomework3.onBoarding.OnBoardingStartActivity
 import com.example.teambhomework3.utils.SharedPreferencesModule
 import com.example.teambhomework3.utils.ThemeUtils
 
@@ -20,6 +22,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
+
         SharedPreferencesModule.initSharedPreferences(baseContext)
 
         ThemeUtils.onActivityCreateSetTheme(this)
