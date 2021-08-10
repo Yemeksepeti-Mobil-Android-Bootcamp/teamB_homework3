@@ -63,4 +63,9 @@
             android:id="@+id/action_addRestaurantFragment_to_restaurantsFragment"
             app:destination="@id/restaurantsFragment" />
     </fragment>
+    <activity
+        android:id="@+id/onBoardingStartActivity"
+        android:name="com.example.teambhomework3.onBoarding.OnBoardingStartActivity"
+        android:label="activity_on_boarding_start"
+        tools:layout="@layout/activity_on_boarding_start" />
 </navigation>

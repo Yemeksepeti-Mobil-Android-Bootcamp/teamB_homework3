@@ -28,4 +28,13 @@
     <color name="koyuAnaRenk">#BF2020</color>
     <color name="yaziRenk1">#FFFFFF</color>
     <color name="yaziRenk2">#BDBDBD</color>
+
+    <color name="light_grey">#ABABAB</color>
+    <color name="dark_grey">#333333</color>
+    <color name="dark_blue">#405467</color>
+
+    <color name="md_white_1000">#ffffff</color>
+    <color name="textColorPrimary">#1b1b1b</color>
+    <color name="textColorSecondary">#808080</color>
+    <color name="blue">#0B1754</color>
 </resources>
