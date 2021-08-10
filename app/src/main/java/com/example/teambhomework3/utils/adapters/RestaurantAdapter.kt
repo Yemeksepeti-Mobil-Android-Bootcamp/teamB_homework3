@@ -51,8 +51,6 @@ class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>, priva
         holder.itemView.setOnClickListener {
             val action = RestaurantsFragmentDirections.actionRestaurantsFragmentToFoodsFragment(restaurant.restaurantName)
             it.findNavController().navigate(action)
-
-
         }
     }
 

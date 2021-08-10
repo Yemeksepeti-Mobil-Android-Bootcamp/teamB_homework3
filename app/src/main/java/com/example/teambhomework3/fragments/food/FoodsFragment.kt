@@ -39,7 +39,8 @@ class FoodsFragment : Fragment() {
         _binding = FragmentFoodsBinding.inflate(inflater, container, false)
 
         binding.foodAddFab.setOnClickListener {
-            findNavController().navigate(R.id.action_foodsFragment_to_addFoodFragment)
+            val action = FoodsFragmentDirections.actionFoodsFragmentToAddFoodFragment(args.restaurantNameData)
+            findNavController().navigate(action)
         }
 
         initViews()

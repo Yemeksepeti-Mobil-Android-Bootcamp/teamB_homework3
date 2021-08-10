@@ -3,9 +3,6 @@
     <item android:id="@+id/restaurantsFragment"
         android:title="@string/restaurants"
         android:icon="@drawable/ic_restaurant"/>
-    <item android:id="@+id/foodsFragment"
-        android:title="@string/foods"
-        android:icon="@drawable/ic_food"/>
     <item android:id="@+id/profileFragment"
         android:title="@string/profile"
         android:icon="@drawable/ic_profile"/>

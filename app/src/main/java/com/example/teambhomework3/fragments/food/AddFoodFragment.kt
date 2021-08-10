@@ -1,6 +1,7 @@
 package com.example.teambhomework3.fragments.food
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -8,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentAddFoodBinding
+import com.example.teambhomework3.entity.Food
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -20,24 +23,25 @@ class AddFoodFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var db: FirebaseFirestore
+    private val args by navArgs<AddFoodFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentAddFoodBinding.inflate(inflater, container, false)
+
         setHasOptionsMenu(true)
+        initViews()
+
+        Log.v("dass","${args.restaurantName}")
+
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private fun initViews() {
+        db = Firebase.firestore
 
-        db= Firebase.firestore
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         binding.saveFoodButton.setOnClickListener {
             val foodName = binding.foodNameTextInputEditText.editableText.toString().trim()
             val foodPrice = binding.foodPriceTextInputEditText.editableText.toString().trim()
@@ -57,17 +61,20 @@ class AddFoodFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            val foodMap= hashMapOf<String,String>()
-            foodMap["foodName"] = foodName
-            foodMap["foodPrice"] = foodPrice
-            foodMap["foodImage"] = foodImage
-            foodMap["foodDescription"] = foodDescription
-
-            db.collection("foods").document(foodName).set(foodMap)
+            db.collection("restaurants")
+                .document(args.restaurantName)
+                .collection("restaurantFoods")
+                .add(
+                    Food(
+                        foodName,
+                        foodImage,
+                        foodPrice,
+                        foodDescription ))
 
             Toast.makeText(context,"Food has been stored in Firestore", Toast.LENGTH_LONG).show()
 
-            findNavController().navigate(R.id.action_addFoodFragment_to_foodsFragment)
+            val direction = AddFoodFragmentDirections.actionAddFoodFragmentToFoodsFragment(args.restaurantName)
+            findNavController().navigate(direction)
         }
     }
 
@@ -77,5 +84,4 @@ class AddFoodFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

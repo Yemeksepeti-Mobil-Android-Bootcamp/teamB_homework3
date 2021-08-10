@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_addFoodFragment_to_foodsFragment"
             app:destination="@id/foodsFragment" />
+        <argument
+            android:name="restaurantName"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/addRestaurantFragment"
