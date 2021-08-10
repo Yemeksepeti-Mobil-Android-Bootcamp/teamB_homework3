@@ -16,9 +16,10 @@ import com.example.teambhomework3.entity.Food
 
 class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Context): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val foodName: TextView = itemView.findViewById(R.id.foodName)
+        val foodName: TextView = itemView.findViewById(R.id.foodTitle)
         val foodImageView : ImageView = itemView.findViewById(R.id.foodImage)
         val foodPrice : TextView = itemView.findViewById(R.id.foodPrice)
+
         val circularProgressDrawable = CircularProgressDrawable(mContext)
     }
 
@@ -29,10 +30,9 @@ class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Con
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val food: Food = foodNamesList[position]
+
         holder.foodName.text = food.foodName
-        holder.circularProgressDrawable.strokeWidth = 5f
-        holder.circularProgressDrawable.centerRadius = 30f
-        holder.circularProgressDrawable.start()
+        holder.foodPrice.text = food.foodPrice
 
         Glide
             .with(mContext)
@@ -41,8 +41,6 @@ class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Con
             .transition(DrawableTransitionOptions.withCrossFade())
             .placeholder(holder.circularProgressDrawable)
             .into(holder.foodImageView)
-
-
     }
 
     override fun getItemCount(): Int {

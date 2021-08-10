@@ -9,12 +9,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.teambhomework3.R
 import com.example.teambhomework3.entity.Restaurant
+import com.example.teambhomework3.fragments.restaurant.RestaurantsFragmentDirections
 
 class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>, private val mContext: Context)
     : RecyclerView.Adapter<RestaurantAdapter.MyViewHolder>(){
@@ -47,8 +49,10 @@ class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>, priva
             .into(holder.restaurantImageView)
 
         holder.itemView.setOnClickListener {
-            navController = Navigation.findNavController(holder.itemView)
-            navController!!.navigate(R.id.action_restaurantsFragment_to_foodsFragment)
+            val action = RestaurantsFragmentDirections.actionRestaurantsFragmentToFoodsFragment(restaurant.restaurantName)
+            it.findNavController().navigate(action)
+
+
         }
     }
 

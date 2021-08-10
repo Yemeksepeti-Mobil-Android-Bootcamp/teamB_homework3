@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentFoodsBinding
@@ -23,9 +24,13 @@ class FoodsFragment : Fragment() {
 
     private var _binding: FragmentFoodsBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var myAdapter: FoodAdapter
     private lateinit var db: FirebaseFirestore
     private lateinit var foodArrayList: ArrayList<Food>
+
+    private val args by navArgs<FoodsFragmentArgs>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,10 +44,6 @@ class FoodsFragment : Fragment() {
 
         initViews()
         return binding.root
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     private fun initViews(){
@@ -59,9 +60,10 @@ class FoodsFragment : Fragment() {
     }
 
 
-    private fun getFoods(db: FirebaseFirestore){
-        db.collection("restaurantFoods").get()
-            .addOnSuccessListener { food ->
+    private fun getFoods(db: FirebaseFirestore) {
+        db.collection("restaurants").document(args.restaurantNameData)
+            .collection("restaurantFoods").get()
+            .addOnSuccessListener { food->
                 for (doc in food){
                     foodArrayList.add(
                         Food(
@@ -69,14 +71,14 @@ class FoodsFragment : Fragment() {
                             "${doc.data["foodImage"]}",
                             "${doc.data["foodPrice"]}",
                             "${doc.data["foodDescription"]}"
-                        )
-                    )
+                        ))
                 }
                 myAdapter.notifyDataSetChanged()
             }
-            .addOnFailureListener { exception->
-                Log.w("errorDocuments","Error getting documents", exception)
+            .addOnFailureListener { exception ->
+                Log.w("errorDocuments", "Error getting documents.", exception)
             }
     }
+
 
 }
