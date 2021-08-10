@@ -1,5 +1,6 @@
 package com.example.teambhomework3.utils.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,14 +8,18 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.teambhomework3.R
 import com.example.teambhomework3.entity.Food
 
-class FoodAdapter(private val foodNamesList: List<Food>): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
+class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Context): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val foodName: TextView = itemView.findViewById(R.id.foodName)
         val foodImageView : ImageView = itemView.findViewById(R.id.foodImage)
         val foodPrice : TextView = itemView.findViewById(R.id.foodPrice)
+        val circularProgressDrawable = CircularProgressDrawable(mContext)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,7 +28,21 @@ class FoodAdapter(private val foodNamesList: List<Food>): RecyclerView.Adapter<F
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.foodName.text = foodNamesList[position].toString()
+        val food: Food = foodNamesList[position]
+        holder.foodName.text = food.foodName
+        holder.circularProgressDrawable.strokeWidth = 5f
+        holder.circularProgressDrawable.centerRadius = 30f
+        holder.circularProgressDrawable.start()
+
+        Glide
+            .with(mContext)
+            .load(food.foodImage)
+            .centerCrop()
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .placeholder(holder.circularProgressDrawable)
+            .into(holder.foodImageView)
+
+
     }
 
     override fun getItemCount(): Int {
