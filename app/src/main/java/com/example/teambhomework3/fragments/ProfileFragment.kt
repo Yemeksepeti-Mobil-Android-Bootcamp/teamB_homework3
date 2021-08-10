@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentProfileBinding
@@ -51,7 +52,7 @@ class ProfileFragment : Fragment() {
         binding.profileAdressRecyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
         binding.profileAdressRecyclerView.setHasFixedSize(true)
 
-        binding.profileOrderRecyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
+        binding.profileOrderRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.profileOrderRecyclerView.setHasFixedSize(true)
 
         adressArrayList = arrayListOf()

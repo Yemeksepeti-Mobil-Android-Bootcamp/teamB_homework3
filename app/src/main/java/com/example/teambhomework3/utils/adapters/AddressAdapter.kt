@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -29,6 +30,7 @@ class AddressAdapter(private val adressList: ArrayList<Adress>, private val mCon
         val adress: TextView = itemView.findViewById(R.id.profileAdress)
         val adressNumber: TextView = itemView.findViewById(R.id.profileNumber)
         val adressContainer: CardView = itemView.findViewById(R.id.profileAdressContainer)
+        val deleteButton: ImageButton = itemView.findViewById(R.id.deleteButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -44,7 +46,7 @@ class AddressAdapter(private val adressList: ArrayList<Adress>, private val mCon
         holder.adress.text = adress.address
         holder.adressNumber.text = adress.adressNumber
 
-        holder.adressContainer.setOnClickListener {
+        holder.deleteButton.setOnClickListener {
             db = Firebase.firestore
 
             db.collection("users").document("7TqNLIAQzjJVWLRAsAmC")
