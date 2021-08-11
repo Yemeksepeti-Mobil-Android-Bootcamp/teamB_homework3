@@ -7,12 +7,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.teambhomework3.R
 import com.example.teambhomework3.entity.Food
+import com.example.teambhomework3.fragments.food.FoodsFragmentDirections
+import com.example.teambhomework3.fragments.restaurant.RestaurantsFragmentDirections
 
 class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Context): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -41,7 +44,13 @@ class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Con
             .transition(DrawableTransitionOptions.withCrossFade())
             .placeholder(holder.circularProgressDrawable)
             .into(holder.foodImageView)
+
+        holder.itemView.setOnClickListener {
+            val action = FoodsFragmentDirections.actionFoodsFragmentToFoodDetailFragment(food)
+            it.findNavController().navigate(action)
+        }
     }
+
 
     override fun getItemCount(): Int {
         return foodNamesList.size

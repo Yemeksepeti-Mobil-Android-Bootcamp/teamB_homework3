@@ -52,16 +52,20 @@
             android:nestedScrollingEnabled="true" />
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/foodAddFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="Add"
-        android:id="@+id/foodAddFab"
-        android:visibility="gone"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="@color/anaRenk"
+        android:contentDescription="Add"
+        android:textColor="@color/white"
+        android:text="Add a Food"
+        android:textAllCaps="false"
+        android:layout_gravity="bottom|right"
         android:src="@drawable/ic_add"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

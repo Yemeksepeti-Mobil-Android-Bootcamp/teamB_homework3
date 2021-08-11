@@ -50,11 +50,15 @@
 
     </ScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/restaurantAddFab"
         android:layout_width="wrap_content"
+        android:text="Add a Restaurant"
+        android:textAllCaps="false"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:contentDescription="Add"
+        android:backgroundTint="@color/anaRenk"
         android:src="@drawable/ic_add"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"

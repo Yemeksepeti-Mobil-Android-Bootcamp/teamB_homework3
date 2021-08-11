@@ -27,6 +27,9 @@
         <argument
             android:name="restaurantNameData"
             app:argType="string" />
+        <action
+            android:id="@+id/action_foodsFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -68,4 +71,16 @@
         android:name="com.example.teambhomework3.onBoarding.OnBoardingStartActivity"
         android:label="activity_on_boarding_start"
         tools:layout="@layout/activity_on_boarding_start" />
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.example.teambhomework3.fragments.food.FoodDetailFragment"
+        android:label="fragment_food_detail"
+        tools:layout="@layout/fragment_food_detail" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_foodsFragment"
+            app:destination="@id/foodsFragment" />
+        <argument
+            android:name="Food"
+            app:argType="com.example.teambhomework3.entity.Food" />
+    </fragment>
 </navigation>
