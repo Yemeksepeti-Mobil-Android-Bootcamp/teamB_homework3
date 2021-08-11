@@ -38,6 +38,7 @@ class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Con
         holder.foodPrice.text = "${food.foodPrice}₺"
         //holder.foodDescription.text = food.foodDescription
 
+
         Glide
             .with(mContext)
             .load(food.foodImage)

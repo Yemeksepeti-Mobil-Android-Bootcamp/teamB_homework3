@@ -25,7 +25,7 @@ class FoodDetailFragment : Fragment() {
         val view = binding.root
 
         initViews()
-
+        binding.foodDetailToolbarBaslik.text=args.foodDetail.foodName
         return view
     }
 
@@ -38,7 +38,7 @@ class FoodDetailFragment : Fragment() {
             .centerCrop()
             .into(binding.foodDetailFoto)
 
-        binding.textViewFiyat.text = args.foodDetail.foodPrice
+        binding.textViewFiyat.text = "${args.foodDetail.foodPrice}₺"
 
         binding.textView7.text = args.foodDetail.foodDescription
     }
