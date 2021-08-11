@@ -16,9 +16,9 @@ import com.example.teambhomework3.entity.Food
 
 class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Context): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val foodName: TextView = itemView.findViewById(R.id.foodTitle)
-        val foodImageView : ImageView = itemView.findViewById(R.id.foodImage)
-        val foodPrice : TextView = itemView.findViewById(R.id.foodPrice)
+        val foodName: TextView = itemView.findViewById(R.id.itemFoodName)
+        val foodImageView : ImageView = itemView.findViewById(R.id.itemFoodImageView)
+        val foodPrice : TextView = itemView.findViewById(R.id.itemFoodPrice)
 
         val circularProgressDrawable = CircularProgressDrawable(mContext)
     }
@@ -32,7 +32,7 @@ class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Con
         val food: Food = foodNamesList[position]
 
         holder.foodName.text = food.foodName
-        holder.foodPrice.text = food.foodPrice
+        holder.foodPrice.text = "${food.foodPrice}₺"
 
         Glide
             .with(mContext)

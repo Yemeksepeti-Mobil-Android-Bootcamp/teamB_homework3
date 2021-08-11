@@ -1,117 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragments.food.FoodsFragment">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detail"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/Scroll2"
-        android:layout_marginBottom="20dp"
-        >
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true">
 
-        <ImageView
-            android:id="@+id/foodImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-
-            />
-        <TextView
-            android:id="@+id/foodName"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/foodImage"
-            android:textSize="20sp"
-            android:text="RestaurantName"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            />
-
-        <ScrollView
-            android:id="@+id/Scroll3"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:requiresFadingEdge="vertical"
-            app:layout_constraintTop_toBottomOf="@id/foodName"
-            app:layout_constraintStart_toEndOf="@id/foodImage"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            >
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis felis condimentum, laoreet urna vitae, bibendum erat. Cras egestas, justo malesuada suscipit fermentum, purus ligula eleifend lorem, non lobortis nisi diam at velit. Phasellus eu felis tellus. Aliquam posuere dictum tortor id sollicitudin. Nam condimentum nulla a tempor pellentesque. Sed condimentum eleifend porttitor. Curabitur elementum porta interdum. Maecenas commodo, tortor id ullamcorper semper, erat tortor ultricies diam, sit amet semper elit nisl vel enim. In hac habitasse platea dictumst. Morbi ultricies, quam a auctor egestas, nisl purus facilisis lacus, imperdiet commodo orci urna at mi. Aenean pretium sit amet nulla ullamcorper tempus."
-                />
-        </ScrollView>
-
-        <TextView
-            android:id="@+id/Adress"
-            android:text="Adress:Ankara/Türkiye"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/Scroll3"
-            app:layout_constraintStart_toEndOf="@id/foodImage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-
-            />
-
-        <TextView
-            android:id="@+id/telefonNo"
-            android:text="0555 555 55 55"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/Adress"
-            app:layout_constraintStart_toEndOf="@+id/foodImage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            />
-
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    <ScrollView
-        android:id="@+id/Scroll2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/detail">
-        <androidx.recyclerview.widget.RecyclerView
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/recyclerView2"/>
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/anaRenk"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:navigationIcon="@drawable/go_back_icon"
+            app:title="Bull Dog"
+            app:expandedTitleTextAppearance="@color/white"
+            >
 
+            <ImageView
+                android:id="@+id/restaurantDetailImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="Image"
+                app:layout_collapseMode="parallax"
+                tools:src="@drawable/ic_launcher_background" />
 
-    </ScrollView>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/restaurantDetailToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Nested"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true" />
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/foodAddFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:src="@drawable/ic_add"
         android:contentDescription="Add"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/foodAddFab"
+        android:visibility="gone"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/purple_200"
+        android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

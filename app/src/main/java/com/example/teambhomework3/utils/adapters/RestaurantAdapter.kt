@@ -28,7 +28,7 @@ class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>, priva
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.cardviewlayout, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_restaurant, parent, false)
         return MyViewHolder(view)
     }
 

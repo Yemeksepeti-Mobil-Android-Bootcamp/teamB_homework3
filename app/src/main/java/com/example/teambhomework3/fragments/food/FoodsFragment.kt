@@ -48,9 +48,9 @@ class FoodsFragment : Fragment() {
     }
 
     private fun initViews(){
-        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),1)
+        binding.recyclerView2.layoutManager = GridLayoutManager(requireContext(),2)
         binding.recyclerView2.setHasFixedSize(true)
-
+     
         foodArrayList = arrayListOf()
         myAdapter = FoodAdapter(foodArrayList,requireContext())
         binding.recyclerView2.adapter = myAdapter

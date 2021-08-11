@@ -39,7 +39,7 @@ class RestaurantsFragment : Fragment() {
     }
 
     private fun initViews() {
-        binding.restaurantRecyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
+        binding.restaurantRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.restaurantRecyclerView.setHasFixedSize(true)
 
         restaurantArrayList = arrayListOf()
