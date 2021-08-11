@@ -22,7 +22,7 @@ class DeliveryFragment(private val data: OnBoardingData):Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.imageView.setImageResource(data.image)
+        //binding.imageView.setImageResource(data.image)
         binding.txtDescription.text = data.description
         binding.txtTitle.text = data.title
     }

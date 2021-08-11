@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.food.FoodDetailFragment">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/foodDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/araMesafe"
@@ -18,10 +18,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailToolbar" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/foodDetailToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/toolbarBaslik"
+            android:id="@+id/foodDetailToolbarBaslik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -44,19 +44,17 @@
             tools:layout_editor_absoluteX="189dp"
             tools:layout_editor_absoluteY="18dp" />
 
-
-
     </androidx.appcompat.widget.Toolbar>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/foodDetailFoto"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_marginTop="@dimen/araMesafe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailTitle"
         app:srcCompat="@drawable/pizza_resim" />
 
     <com.google.android.material.chip.Chip
@@ -71,7 +69,7 @@
         app:layout_constraintEnd_toStartOf="@+id/chip6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip6"
@@ -84,7 +82,7 @@
         app:layout_constraintEnd_toStartOf="@+id/chip7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/chip5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip7"
@@ -97,7 +95,7 @@
         app:layout_constraintEnd_toStartOf="@+id/chip8"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/chip6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip8"
@@ -110,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/chip7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
 
     <TextView
         android:id="@+id/textView5"
@@ -178,7 +176,5 @@
         app:backgroundTint="@color/anaRenk"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

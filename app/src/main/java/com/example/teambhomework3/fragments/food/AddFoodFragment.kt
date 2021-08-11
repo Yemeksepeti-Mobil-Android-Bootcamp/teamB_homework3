@@ -73,7 +73,7 @@ class AddFoodFragment : Fragment() {
 
             Toast.makeText(context,"Food has been stored in Firestore", Toast.LENGTH_LONG).show()
 
-            val direction = AddFoodFragmentDirections.actionAddFoodFragmentToFoodsFragment(args.restaurantName)
+            val direction = AddFoodFragmentDirections.actionAddFoodFragmentToFoodsFragment(args.restaurantName, args.restaurantImage)
             findNavController().navigate(direction)
         }
     }
