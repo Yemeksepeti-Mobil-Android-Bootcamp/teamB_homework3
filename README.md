@@ -4,7 +4,8 @@
 
 <br />
 
-<img src="./assets/1.gif" 
+<p float="left">
+  <img src="./assets/1.gif" 
   alt="gif" 
   height="500"
   />
@@ -18,7 +19,12 @@
   alt="gif" 
   height="500"
   />
+</p>
 
+<br />
+
+<p float="left">
+  
   <img src="./assets/4.gif" 
   alt="gif" 
   height="500"
@@ -33,3 +39,4 @@
   alt="gif" 
   height="500"
   />
+</p>
