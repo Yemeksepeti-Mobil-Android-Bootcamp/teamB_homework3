@@ -1,4 +1,4 @@
-# teamB_homework3
+# Homework 3 - Team B
 
 ## Yemeksepeti Android Bootcamp TeamB Homework 3
 
