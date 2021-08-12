@@ -23,7 +23,7 @@
 
 <br />
 
-<p float="left">
+<div float="left" display="flex">
   
   <img src="./assets/4.gif" 
   alt="gif" 
@@ -39,4 +39,4 @@
   alt="gif" 
   height="500"
   />
-</p>
+</div>
