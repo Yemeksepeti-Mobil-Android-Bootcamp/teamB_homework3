@@ -9,7 +9,7 @@
   height="500"
   />
 
-<img src="./assets/2.gif" 
+<img src="./assets/two.gif" 
   alt="gif" 
   height="500"
   />
