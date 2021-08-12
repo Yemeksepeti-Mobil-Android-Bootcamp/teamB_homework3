@@ -4,32 +4,28 @@
 
 <br />
 
-<img src="./asset/1.gif" 
+<img src="./assets/1.gif" 
   alt="gif" 
   height="500"
   />
 
-  <img src="./asset/2.gif" 
+
+  <img src="./assets/3.gif" 
   alt="gif" 
   height="500"
   />
 
-  <img src="./asset/3.gif" 
+  <img src="./assets/4.gif" 
   alt="gif" 
   height="500"
   />
 
-  <img src="./asset/4.gif" 
+  <img src="./assets/5.gif" 
   alt="gif" 
   height="500"
   />
 
-  <img src="./asset/5.gif" 
-  alt="gif" 
-  height="500"
-  />
-
-  <img src="./asset/6.gif" 
+  <img src="./assets/6.gif" 
   alt="gif" 
   height="500"
   />
