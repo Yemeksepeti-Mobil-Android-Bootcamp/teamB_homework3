@@ -1,19 +1,19 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
     android:id="@+id/itemFoodCardView"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="@drawable/card_background"
-    android:elevation="3dp">
+    android:backgroundTint="#0000ffff"
+    app:cardElevation="0dp"
+    app:cardMaxElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="160dp"
         android:layout_height="190dp"
         android:layout_margin="10dp"
-        android:elevation="8dp"
         android:background="@drawable/card_background"
-        >
+        android:elevation="8dp">
 
         <ImageView
             android:id="@+id/itemFoodImageView"
