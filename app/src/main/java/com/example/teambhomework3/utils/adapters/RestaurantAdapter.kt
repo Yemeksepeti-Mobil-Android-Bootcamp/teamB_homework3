@@ -34,7 +34,7 @@ class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>, priva
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val restaurant: Restaurant =restaurantList[position]
-        var navController: NavController? = null
+
         holder.restaurantName.text = restaurant.restaurantName
         holder.circularProgressDrawable.strokeWidth = 5f
         holder.circularProgressDrawable.centerRadius = 30f
@@ -49,7 +49,7 @@ class RestaurantAdapter(private val restaurantList: ArrayList<Restaurant>, priva
             .into(holder.restaurantImageView)
 
         holder.itemView.setOnClickListener {
-            val action = RestaurantsFragmentDirections.actionRestaurantsFragmentToFoodsFragment(restaurant.restaurantName)
+            val action = RestaurantsFragmentDirections.actionRestaurantsFragmentToFoodsFragment(restaurant.restaurantName, restaurant.restaurantImage)
             it.findNavController().navigate(action)
         }
     }

@@ -10,6 +10,7 @@ import android.widget.GridLayout
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.example.teambhomework3.R
 import com.example.teambhomework3.databinding.FragmentFoodsBinding
 import com.example.teambhomework3.entity.Food
@@ -39,7 +40,7 @@ class FoodsFragment : Fragment() {
         _binding = FragmentFoodsBinding.inflate(inflater, container, false)
 
         binding.foodAddFab.setOnClickListener {
-            val action = FoodsFragmentDirections.actionFoodsFragmentToAddFoodFragment(args.restaurantNameData)
+            val action = FoodsFragmentDirections.actionFoodsFragmentToAddFoodFragment(args.restaurantNameData, args.restaurantImageData)
             findNavController().navigate(action)
         }
 
@@ -54,6 +55,15 @@ class FoodsFragment : Fragment() {
         foodArrayList = arrayListOf()
         myAdapter = FoodAdapter(foodArrayList,requireContext())
         binding.recyclerView2.adapter = myAdapter
+
+        Glide
+            .with(requireContext())
+            .load(args.restaurantImageData)
+            .centerCrop()
+            .into(binding.restaurantDetailImage)
+
+        binding.collapsingToolbar.title = args.restaurantNameData
+        binding.restaurantDetailToolbar.title = args.restaurantNameData
 
         db = Firebase.firestore
 

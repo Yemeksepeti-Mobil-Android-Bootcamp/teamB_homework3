@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".onBoarding.OnBoardingStartActivity">
 
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imgPrevious"
         android:layout_width="?actionBarSize"

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.food.FoodDetailFragment">
+
+    <TextView
+        android:id="@+id/foodDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pizza"
+        android:textColor="@color/anaRenk"
+        android:textSize="@dimen/baslikYaziBoyut"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailToolbar" />
+
+    <androidx.appcompat.widget.Toolbar
+        app:menu="@menu/food_share_menu"
+        android:id="@+id/foodDetailToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/foodDetailToolbarBaslik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/pacifico"
+            android:text="Pizza"
+            android:textColor="@color/yaziRenk1"
+            android:textSize="26sp"
+            tools:layout_editor_absoluteX="189dp"
+            tools:layout_editor_absoluteY="18dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/foodDetailFoto"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailTitle"
+        app:srcCompat="@drawable/pizza_resim" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="peynir"
+        android:textColor="@color/yaziRenk1"
+        android:textSize="@dimen/chipYaziBoyut"
+        app:chipBackgroundColor="@color/anaRenk"
+        app:layout_constraintEnd_toStartOf="@+id/chip6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="sucuk"
+        android:textColor="@color/yaziRenk1"
+        app:chipBackgroundColor="@color/anaRenk"
+        app:layout_constraintEnd_toStartOf="@+id/chip7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chip5"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="zeytin"
+        android:textColor="@color/yaziRenk1"
+        app:chipBackgroundColor="@color/anaRenk"
+        app:layout_constraintEnd_toStartOf="@+id/chip8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chip6"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="biber"
+        android:textColor="@color/yaziRenk1"
+        app:chipBackgroundColor="@color/anaRenk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/chip7"
+        app:layout_constraintTop_toBottomOf="@+id/foodDetailFoto" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="20 dk"
+        android:textColor="@color/yaziRenk2"
+        android:textSize="@dimen/genelYaziBoyut"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chip6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Teslimat Süresi"
+        android:textColor="@color/anaRenk"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="@dimen/yaziGenislik"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Et sever pizzanla tanışmaya hazırlan !"
+        android:textColor="@color/yaziRenk2"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textViewFiyat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/kenarMesafe"
+        android:layout_marginBottom="32dp"
+        android:text="48.99 ₺"
+        android:textColor="@color/anaRenk"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSepet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/kenarMesafe"
+        android:layout_marginBottom="30dp"
+        android:text="SEPETE EKLE"
+        android:textColor="@color/yaziRenk1"
+        android:textSize="18sp"
+        app:backgroundTint="@color/anaRenk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

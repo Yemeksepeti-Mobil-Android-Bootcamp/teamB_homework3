@@ -27,6 +27,9 @@
         <argument
             android:name="restaurantNameData"
             app:argType="string" />
+        <argument
+            android:name="restaurantImageData"
+            app:argType="string" />
         <action
             android:id="@+id/action_foodsFragment_to_foodDetailFragment"
             app:destination="@id/foodDetailFragment" />
@@ -56,6 +59,9 @@
         <argument
             android:name="restaurantName"
             app:argType="string" />
+        <argument
+            android:name="restaurantImage"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/addRestaurantFragment"
@@ -74,13 +80,10 @@
     <fragment
         android:id="@+id/foodDetailFragment"
         android:name="com.example.teambhomework3.fragments.food.FoodDetailFragment"
-        android:label="fragment_food_detail"
-        tools:layout="@layout/fragment_food_detail" >
-        <action
-            android:id="@+id/action_foodDetailFragment_to_foodsFragment"
-            app:destination="@id/foodsFragment" />
+        android:label="fragment_food_detail2"
+        tools:layout="@layout/fragment_food_detail2" >
         <argument
-            android:name="Food"
+            android:name="foodDetail"
             app:argType="com.example.teambhomework3.entity.Food" />
     </fragment>
 </navigation>
