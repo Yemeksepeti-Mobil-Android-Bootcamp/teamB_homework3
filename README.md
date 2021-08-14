@@ -1,6 +1,15 @@
 # Homework 3 - Team B
 
-## Yemeksepeti Android Bootcamp TeamB Homework 3
+## Yerel Yemek Sipariş Uygulaması
+
+- [x] MVVM architecture
+- [x] Dagger Hilt
+- [x] Retrofit
+- [x] Coroutine
+- [x] Glide
+- [x] View Binding
+- [x] Navigation
+- [x] View Pager 2 (Onboarding), Recycler View
 
 <br />
 
