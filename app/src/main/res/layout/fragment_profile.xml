@@ -8,7 +8,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
-        tools:context=".fragments.ProfileFragment">
+        tools:context=".ui.fragments.profile.ProfileFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

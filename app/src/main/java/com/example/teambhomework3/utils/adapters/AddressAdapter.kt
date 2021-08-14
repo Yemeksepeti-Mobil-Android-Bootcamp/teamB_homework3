@@ -10,11 +10,9 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teambhomework3.R
-import com.example.teambhomework3.entity.Adress
-import com.google.firebase.firestore.DocumentSnapshot
+import com.example.teambhomework3.data.entity.address.Adress
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase

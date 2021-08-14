@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/restaurantsFragment"
-        android:name="com.example.teambhomework3.fragments.restaurant.RestaurantsFragment"
+        android:name="com.example.teambhomework3.ui.fragments.restaurant.RestaurantsFragment"
         android:label="@string/restaurants"
         tools:layout="@layout/fragment_restaurants">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/foodsFragment"
-        android:name="com.example.teambhomework3.fragments.food.FoodsFragment"
+        android:name="com.example.teambhomework3.ui.fragments.food.FoodsFragment"
         tools:layout="@layout/fragment_foods" >
         <action
             android:id="@+id/action_foodsFragment_to_addFoodFragment"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.teambhomework3.fragments.ProfileFragment"
+        android:name="com.example.teambhomework3.ui.fragments.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -45,12 +45,12 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.teambhomework3.fragments.SettingsFragment"
+        android:name="com.example.teambhomework3.ui.fragments.setting.SettingsFragment"
         android:label="@string/settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/addFoodFragment"
-        android:name="com.example.teambhomework3.fragments.food.AddFoodFragment"
+        android:name="com.example.teambhomework3.ui.fragments.food.AddFoodFragment"
         android:label="Add a Food"
         tools:layout="@layout/fragment_add_food" >
         <action
@@ -65,7 +65,7 @@
     </fragment>
     <fragment
         android:id="@+id/addRestaurantFragment"
-        android:name="com.example.teambhomework3.fragments.restaurant.AddRestaurantFragment"
+        android:name="com.example.teambhomework3.ui.fragments.restaurant.AddRestaurantFragment"
         android:label="Add a Restaurant"
         tools:layout="@layout/fragment_add_restaurant" >
         <action
@@ -74,16 +74,16 @@
     </fragment>
     <activity
         android:id="@+id/onBoardingStartActivity"
-        android:name="com.example.teambhomework3.onBoarding.OnBoardingStartActivity"
+        android:name="com.example.teambhomework3.ui.onBoarding.OnBoardingStartActivity"
         android:label="activity_on_boarding_start"
         tools:layout="@layout/activity_on_boarding_start" />
     <fragment
         android:id="@+id/foodDetailFragment"
-        android:name="com.example.teambhomework3.fragments.food.FoodDetailFragment"
+        android:name="com.example.teambhomework3.ui.fragments.food.FoodDetailFragment"
         android:label="fragment_food_detail2"
         tools:layout="@layout/fragment_food_detail2" >
         <argument
             android:name="foodDetail"
-            app:argType="com.example.teambhomework3.entity.Food" />
+            app:argType="com.example.teambhomework3.data.entity.Food" />
     </fragment>
 </navigation>

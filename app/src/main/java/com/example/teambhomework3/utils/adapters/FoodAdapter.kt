@@ -13,10 +13,10 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.teambhomework3.R
-import com.example.teambhomework3.entity.Food
-import com.example.teambhomework3.fragments.food.FoodsFragmentDirections
+import com.example.teambhomework3.data.entity.Food
+import com.example.teambhomework3.ui.fragments.food.FoodsFragmentDirections
 
-class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Context): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
+class FoodAdapter(private val foodNamesList: List<Food>, private val mContext:Context): RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val foodName: TextView = itemView.findViewById(R.id.itemFoodName)
         val foodImageView : ImageView = itemView.findViewById(R.id.itemFoodImageView)
@@ -52,7 +52,8 @@ class FoodAdapter(private val foodNamesList: List<Food>,private val mContext:Con
                 Food(food.foodName,
                     food.foodImage,
                     food.foodPrice,
-                    food.foodDescription))
+                    food.foodDescription)
+            )
             it.findNavController().navigate(direction)
         }
 

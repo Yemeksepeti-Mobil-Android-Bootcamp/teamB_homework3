@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.teambhomework3.R
-import com.example.teambhomework3.entity.Order
+import com.example.teambhomework3.data.entity.order.Order
 
 class OrderAdapter(private val orderList: ArrayList<Order>) :
     RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {

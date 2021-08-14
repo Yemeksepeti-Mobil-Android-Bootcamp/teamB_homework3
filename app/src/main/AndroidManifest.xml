@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".application.GroupbApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,19 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TeamBHomework3_Light"
         android:usesCleartextTraffic="true">
-        <activity android:name=".onBoarding.OnBoardingStartActivity">
+        <activity android:name=".ui.activity.AuthActivity">
+
+        </activity>
+        <activity android:name=".ui.onBoarding.OnBoardingStartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".onBoarding.OnBoardingFinishActivity" />
+        <activity android:name=".ui.onBoarding.OnBoardingFinishActivity" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:name=".ui.activity.MainActivity"
+            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

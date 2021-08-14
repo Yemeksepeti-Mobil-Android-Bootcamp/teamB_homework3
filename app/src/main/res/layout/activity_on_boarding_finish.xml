@@ -55,7 +55,7 @@
         android:focusable="true">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button"
+            android:id="@+id/loginBtn"
             android:onClick="clickGetStarted"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
