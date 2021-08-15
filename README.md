@@ -3,6 +3,7 @@
 ## Yerel Yemek Sipariş Uygulaması
 
 - [x] MVVM architecture
+- [x] Firebase
 - [x] Dagger Hilt
 - [x] Retrofit
 - [x] Coroutine
